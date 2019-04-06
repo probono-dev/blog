@@ -114,6 +114,10 @@ const theme = {
       'pre code:before,pre code:after,pre tt:before,pre tt:after': {
         content: 'none',
       },
+      'li>a>img': {
+        margin: 0,
+        width: '1em'
+      }
     };
   },
 };
