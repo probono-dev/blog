@@ -1,14 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `ProBono Blog`,
+    author: `Daniel Kovacs`,
+    description: `Architectural blog for ProBono platform to connect charitable talent with causes in need.`,
+    siteUrl: `https://blog.probono.dev/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `DanyKovacs`,
     },
   },
   plugins: [
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-linaria`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -50,20 +52,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-137797856-1`,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `ProBono Blog`,
+        short_name: `ProBono Blog`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#fdf9f9`,
+        theme_color: `#B8336A`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/logo_design.png`,
       },
     },
     `gatsby-plugin-offline`,
@@ -75,4 +77,4 @@ module.exports = {
       },
     },
   ],
-}
+};

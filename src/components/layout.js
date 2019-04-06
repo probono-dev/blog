@@ -1,55 +1,50 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
+import Logo from '../images/Logo';
+import { styled } from 'linaria/react';
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm, scale } from '../utils/typography';
+import { Underline } from './Underline';
+
+const SiteHeader = styled.h1`
+  font-size: ${scale(1.5).fontSize};
+  line-height: ${scale(1.5).lineHeight};
+  margin-bottom: ${rhythm(1.5)};
+  margin-top: 0;
+`;
+
+const SiteLink = styled(Link)`
+  box-shadow: none;
+  text-decoration: none;
+  color: inherit;
+`;
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+    const { location, title, children } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
+    let header;
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
+        <SiteHeader>
+          <SiteLink to={`/`}>
+            <Logo /> {title}
+          </SiteLink>
+        </SiteHeader>
+      );
     } else {
       header = (
         <h3
           style={{
-            fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
           }}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
+          <SiteLink to={`/`}>
+            <Logo /> {title}
+          </SiteLink>
         </h3>
-      )
+      );
     }
     return (
       <div
@@ -63,13 +58,21 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}, Built by
+          {` `}
+          <a href="https://www.github.com/danielkov">@danielkov</a>
+          {` `}
+          using
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
+          {` `}
+          and hosted on
+          {` `}
+          <a href="httsp://www.netlify.com">Netlify</a>
         </footer>
       </div>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;

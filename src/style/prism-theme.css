@@ -1,0 +1,188 @@
+/**
+ * Darcula theme
+ *
+ * Adapted from a theme based on:
+ * IntelliJ Darcula Theme (https://github.com/bulenkov/Darcula)
+ *
+ * @author Alexandre Paradis <service.paradis@gmail.com>
+ * @version 1.0
+ */
+
+ :root {
+   --bg: #202333;
+   --color: rgb(161, 153, 148);
+   --code: #72665E;
+   --comment: #5E544D;
+   --operator: #BE4577;
+   --property: #988F89;
+   --selector: #eeebff;
+   --attr-name: rgb(224, 166, 190);
+   --css-token: #CB6A92;
+   --highlight: var(--property);
+   --highlight-bg: rgba(224, 145, 66, 0.2);
+ }
+
+ .gatsby-highlight {
+  margin-bottom: 1.75rem;
+  border-radius: 10px;
+  background: var(--bg);
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+ }
+
+ code[class*="language-"],
+ pre[class*="language-"] {
+   color: var(--color);
+   direction: ltr;
+   text-align: left;
+   white-space: pre;
+   word-spacing: normal;
+   word-break: normal;
+   line-height: 1.5;
+ 
+   -moz-tab-size: 4;
+   -o-tab-size: 4;
+   tab-size: 4;
+ 
+   -webkit-hyphens: none;
+   -moz-hyphens: none;
+   -ms-hyphens: none;
+   hyphens: none;
+ }
+ pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: var(--code);
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: var(--code);
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--comment);
+}
+
+.token.punctuation {
+  color: var(--comment);
+}
+
+.token.namespace {
+  opacity: .7;
+}
+
+.token.tag,
+.token.operator,
+.token.number {
+  color: var(--operator);
+}
+
+.token.property,
+.token.function {
+  color: var(--property);
+}
+
+.token.tag-id,
+.token.selector,
+.token.atrule-id {
+  color: var(--selector);
+}
+
+code.language-javascript,
+.token.attr-name {
+  color: var(--attr-name);
+}
+
+code.language-css,
+code.language-scss,
+.token.boolean,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.language-scss .token.string,
+.style .token.string,
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit,
+.token.statement,
+.token.regex,
+.token.atrule {
+  color: var(--css-token);
+}
+
+.token.placeholder,
+.token.variable {
+  color: var(--css-token);
+}
+
+.token.deleted {
+  text-decoration: line-through;
+}
+
+.token.inserted {
+  border-bottom: 1px dotted var(--selector);
+  text-decoration: none;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.important,
+.token.string {
+  color: var(--attr-name);
+}
+
+.token.entity {
+  cursor: help;
+}
+
+pre > code.highlight {
+  outline: .4em solid var(--highlight);
+  outline-offset: .4em;
+}
+
+/* overrides color-values for the Line Numbers plugin
+ * http://prismjs.com/plugins/line-numbers/
+ */
+.line-numbers .line-numbers-rows {
+  border-right-color: #2c2937;
+}
+
+.line-numbers-rows > span:before {
+  color: #3c3949;
+}
+
+/* overrides color-values for the Line Highlight plugin
+* http://prismjs.com/plugins/line-highlight/
+*/
+.line-highlight {
+  background: var(--highlight-bg);
+  background: -webkit-linear-gradient(left, var(--highlight-bg) 70%, transparent);
+  background: linear-gradient(to right, var(--highlight-bg) 70%, transparent);
+}

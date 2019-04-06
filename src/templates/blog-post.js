@@ -12,6 +12,10 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
+    const {frontmatter} = post
+
+    console.log(frontmatter)
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -22,9 +26,6 @@ class BlogPostTemplate extends React.Component {
         <p
           style={{
             ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
           }}
         >
           {post.frontmatter.date}
@@ -35,7 +36,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
+        <Bio name={post.frontmatter.author} handle={post.frontmatter.authorHandle} plug={post.frontmatter.authorPlug} />
 
         <ul
           style={{
@@ -84,6 +85,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        author
+        authorHandle
+        authorPlug
       }
     }
   }
