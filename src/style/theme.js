@@ -116,8 +116,8 @@ const theme = {
       },
       'li>a>img': {
         margin: 0,
-        width: '1em'
-      }
+        width: '1em',
+      },
     };
   },
 };

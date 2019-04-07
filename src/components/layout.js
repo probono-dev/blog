@@ -4,11 +4,16 @@ import Logo from '../images/Logo';
 import { styled } from 'linaria/react';
 
 import { rhythm, scale } from '../utils/typography';
-import { Underline } from './Underline';
+
+const Site = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${rhythm(24)};
+  padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+`;
 
 const SiteHeader = styled.h1`
-  font-size: ${scale(1.5).fontSize};
-  line-height: ${scale(1.5).lineHeight};
+  ${scale(1.5)};
   margin-bottom: ${rhythm(1.5)};
   margin-top: 0;
 `;
@@ -17,6 +22,10 @@ const SiteLink = styled(Link)`
   box-shadow: none;
   text-decoration: none;
   color: inherit;
+`;
+
+const PostHeader = styled.h3`
+  margin-top: 0;
 `;
 
 class Layout extends React.Component {
@@ -35,26 +44,15 @@ class Layout extends React.Component {
       );
     } else {
       header = (
-        <h3
-          style={{
-            marginTop: 0,
-          }}
-        >
+        <PostHeader>
           <SiteLink to={`/`}>
             <Logo /> {title}
           </SiteLink>
-        </h3>
+        </PostHeader>
       );
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
+      <Site>
         <header>{header}</header>
         <main>{children}</main>
         <footer>
@@ -70,7 +68,7 @@ class Layout extends React.Component {
           {` `}
           <a href="httsp://www.netlify.com">Netlify</a>
         </footer>
-      </div>
+      </Site>
     );
   }
 }

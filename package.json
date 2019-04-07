@@ -44,7 +44,9 @@
   "devDependencies": {
     "@playlyfe/gql": "^2.6.1",
     "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
     "graphql-cli": "^3.0.11",
+    "markdown-spellcheck": "^1.3.1",
     "prettier": "^1.16.4",
     "tslint-config-prettier": "^1.18.0"
   },
@@ -67,6 +69,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "extractSchema": "graphql get-schema http://localhost:8000/___graphql",
+    "spellCheck": "mdspell content/blog/**/*.md",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   }
 }
