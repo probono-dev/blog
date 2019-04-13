@@ -1,5 +1,5 @@
 import Typography from 'typography';
-import theme from '../style/theme';
+import theme from '@probono/typography-theme-probono';
 
 const typography = new Typography(theme);
 

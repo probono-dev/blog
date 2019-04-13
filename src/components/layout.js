@@ -18,12 +18,6 @@ const SiteHeader = styled.h1`
   margin-top: 0;
 `;
 
-const SiteLink = styled(Link)`
-  box-shadow: none;
-  text-decoration: none;
-  color: inherit;
-`;
-
 const PostHeader = styled.h3`
   margin-top: 0;
 `;
@@ -37,17 +31,17 @@ class Layout extends React.Component {
     if (location.pathname === rootPath) {
       header = (
         <SiteHeader>
-          <SiteLink to={`/`}>
+          <Link to={`/`}>
             <Logo /> {title}
-          </SiteLink>
+          </Link>
         </SiteHeader>
       );
     } else {
       header = (
         <PostHeader>
-          <SiteLink to={`/`}>
+          <Link to={`/`}>
             <Logo /> {title}
-          </SiteLink>
+          </Link>
         </PostHeader>
       );
     }

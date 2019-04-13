@@ -9,13 +9,13 @@ const BioContainer = styled.section`
 `;
 
 const LogoLink = styled.a`
-  text-shadow: none;
-  background-image: none;
   margin-right: ${rhythm(1 / 2)};
   width: 80px;
   height: 80px;
   margin-bottom: 0;
   border-radius: 100%;
+  background: none;
+  border: none;
 `;
 
 const Plug = styled.p`
