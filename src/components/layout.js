@@ -50,7 +50,9 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built by
+          © {new Date().getFullYear()}, Blog for
+          {` `}
+          <a href="https://probono.dev">ProBono</a>, built by
           {` `}
           <a href="https://www.github.com/danielkov">@danielkov</a>
           {` `}

@@ -16,6 +16,8 @@ const LogoLink = styled.a`
   border-radius: 100%;
   background: none;
   border: none;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 `;
 
 const Plug = styled.p`
